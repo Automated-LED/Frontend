@@ -593,15 +593,14 @@ module.exports = class ColorPicker extends Component {
 			marginTop:0,
 			marginLeft:0,
 			marginRight:row?margin:0,
-			marginBottom:row?0:margin,
+//			marginBottom:row?0:margin,
 		}
 		// console.log('RENDER >>',row,thumbSize,sliderSize)
 		return (
-			<View style={[ss.root,row?{flexDirection:'row'}:{},style,]}>
-
+			<View style={[ss.root,row?{flexDirection:'row'}:{},style]}>
 				{ swatches && !swatchesLast && <View style={[ss.swatches,swatchStyle,swatchFirstStyle]} key={'SW'}>{ this.swatches }</View> }
 				{ !swatchesOnly && <View style={[ss.wheel]} key={'$1'} onLayout={this.onSquareLayout}>
-					{ this.wheelWidth>0 && <View style={[{padding:thumbSize/2,width:this.wheelWidth,height:this.wheelWidth}]}>
+					{ this.wheelWidth>0 && <View style={[{width:this.wheelWidth,height:this.wheelWidth}]}>
 						<View style={[ss.wheelWrap]}>
 							<Image style={ss.wheelImg} source={srcWheel} />
 							<Animated.View style={[ss.wheelThumb,wheelThumbStyle,Elevations[4],{pointerEvents:'none'}]} />
@@ -625,28 +624,31 @@ module.exports = class ColorPicker extends Component {
 const ss = StyleSheet.create({
 	root: {
 		flex: 1,
+		width: '90%',
 		flexDirection: 'column',
 		alignItems: 'center',
-		justifyContent: 'space-between',
+		justifyContent: 'center',
 		overflow: 'visible',
-		padding:10,
-		backgroundColor: '#ffffcc'
+		left:'5%',
 		// aspectRatio: 1,
-		// backgroundColor: '#ffcccc',
+//		 backgroundColor: '#ffcccc',
+//            borderColor:'black',
+//            borderWidth:10,
 	},
 	wheel: {
-		flex: 1,
-		// justifyContent: 'center',
-		// alignItems: 'center',
+//		flex: 0.1,
+		justifyContent: 'center',
+		marginTop:0,
+		alignItems: 'center',
 		position: 'relative',
 		overflow: 'visible',
-		width: '100%',
-		minWidth: 200,
-		minHeight: 200,
-		
+		width: '90%',
+		minWidth: 160,
+		minHeight: 160,
+		 borderColor:'black',
 		// aspectRatio: 1,
-		backgroundColor: '#ffffcc'
-		
+//		 backgroundColor: '#ffccff',
+
 	},
 	wheelWrap: {
 		width: '100%',
@@ -656,15 +658,13 @@ const ss = StyleSheet.create({
 	wheelImg: {
 		width: '100%',
 		height: '100%',
-		backgroundColor: '#ffffcc'
-	
+		// backgroundColor: '#ffffcc',
 	},
 	wheelThumb: {
 		position: 'absolute',
 		backgroundColor: '#EEEEEE',
-		borderWidth: 1,
-		// border: 2,
-		borderColor: '#000',
+		borderWidth: 3,
+		borderColor: '#EEEEEE',
 		elevation: 4,
 		shadowColor: 'rgb(46, 48, 58)',
 		shadowOffset: {width: 0, height: 2},
@@ -680,23 +680,23 @@ const ss = StyleSheet.create({
 		// backgroundColor: '#ccccff88',
 	},
 	slider: {
-		width: '100%',
-		height: 32,
-		marginTop: 10,
+
+		// height: 32,
+//		marginTop: 16,
 		// overflow: 'hidden',
 		flexDirection: 'column-reverse',
 		// elevation: 4,
 		// backgroundColor: '#ccccff',
 	},
 	sliderImg: {
-		width: '100%',
+		width: '90%',
 		height: '100%',
-		
 	},
 	sliderThumb: {
 		position: 'absolute',
+		width: '90%',
 		top: 0,
-		left: 0,
+		left: '5%',
 		borderWidth: 2,
 		borderColor: '#EEEEEE',
 		elevation: 4,
@@ -705,23 +705,19 @@ const ss = StyleSheet.create({
 	grad: {
 		borderRadius: 100,
 		overflow: "hidden",
-		height: '50%',
-		width: '50%',
-		
+		height: '100%',
 	},
 	swatches: {
 		width: '100%',
 		flexDirection: 'row',
-		backgroundColor: '#ffffcc',
-		// justifyContent: 'space-between',
-		marginTop: 16,
+		justifyContent: 'space-between',
+//		marginTop: 16,
 		// padding: 16,
 	},
 	swatch: {
 		width: 20,
 		height: 20,
 		borderRadius: 10,
-		
 		// borderWidth: 1,
 		borderColor: '#8884',
 		alignItems: 'center',
@@ -729,10 +725,11 @@ const ss = StyleSheet.create({
 		overflow: 'visible',
 	},
 	swatchTouch: {
+
 		width: 30,
 		height: 30,
 		borderRadius: 15,
 		backgroundColor: '#f004',
-		overflow: 'hidden'
+		overflow: 'hidden',
 	},
 })
