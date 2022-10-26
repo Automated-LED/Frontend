@@ -609,11 +609,11 @@ module.exports = class ColorPicker extends Component {
 					</View> }
 				</View> }
 				{ !swatchesOnly && !sliderHidden && (discrete ? <View style={[ss.swatches,swatchStyle]} key={'$2'}>{ this.disc }</View> : <View style={[ss.slider,sliderStyle]} key={'$2'}>
-					<View style={[ss.grad,{backgroundColor:hex}]}>
+					{/* <View style={[ss.grad,{backgroundColor:hex}]}>
 						<Image style={ss.sliderImg} source={row?srcSliderRotated:srcSlider} resizeMode="stretch" />
-					</View>
-					<Animated.View style={[ss.sliderThumb,sliderThumbStyle,Elevations[4],{pointerEvents:'none'}]} />
-					<View style={[ss.cover]} onLayout={this.onSliderLayout} {...sliderPanHandlers} ref={r => { this.slider = r }}></View>
+					</View> */}
+					{/* <Animated.View style={[ss.sliderThumb,sliderThumbStyle,Elevations[4],{pointerEvents:'none'}]} /> */}
+					{/* <View style={[ss.cover]} onLayout={this.onSliderLayout} {...sliderPanHandlers} ref={r => { this.slider = r }}></View> */}
 				</View>) }
 				{ swatches && swatchesLast && <View style={[ss.swatches,swatchStyle]} key={'SW'}>{ this.swatches }</View> }
 			</View>
@@ -626,8 +626,8 @@ const ss = StyleSheet.create({
 		flex: 1,
 		width: '70%',
 		flexDirection: 'column',
-		alignItems: 'left',
-		justifyContent: 'left',
+		
+		justifyContent: 'center',
 		overflow: 'visible',
 		left:'5%',
 		// aspectRatio: 1,
@@ -688,25 +688,25 @@ const ss = StyleSheet.create({
 		// elevation: 4,
 		// backgroundColor: '#ccccff',
 	},
-	sliderImg: {
-		width: '90%',
-		height: '100%',
-	},
-	sliderThumb: {
-		position: 'absolute',
-		width: '90%',
-		top: 0,
-		left: '5%',
-		borderWidth: 2,
-		borderColor: '#EEEEEE',
-		elevation: 4,
-		// backgroundColor: '#f00',
-	},
-	grad: {
-		borderRadius: 100,
-		overflow: "hidden",
-		height: '100%',
-	},
+	// sliderImg: {
+	// 	width: '90%',
+	// 	height: '100%',
+	// },
+	// sliderThumb: {
+	// 	position: 'absolute',
+	// 	width: '90%',
+	// 	top: 0,
+	// 	left: '5%',
+	// 	borderWidth: 2,
+	// 	borderColor: '#EEEEEE',
+	// 	elevation: 4,
+	// 	// backgroundColor: '#f00',
+	// },
+	// grad: {
+	// 	borderRadius: 100,
+	// 	overflow: "hidden",
+	// 	height: '100%',
+	// },
 	swatches: {
 		width: '100%',
 		flexDirection: 'row',

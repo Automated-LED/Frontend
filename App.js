@@ -21,11 +21,11 @@ class App extends Component {
       <View style={styles.container}>
         {/* ------------------------------- NAVBAR----------------------------------------------------------- */}
         <View style={styles.navbar}>
+          
           {/* LOGO IMAGE */}
           <TouchableOpacity
             onPress={() => Linking.openURL("https://flaglamps.com/")}
-            activeOpacity={1}
-          >
+            activeOpacity={1} >
             <Image
               source={{
                 uri: "https://cdn.shopify.com/s/files/1/0532/3522/0641/files/L_M_Logo_Original_180x.jpg?v=1613004952",
@@ -33,20 +33,19 @@ class App extends Component {
               style={styles.logo}
             />
           </TouchableOpacity>
-          {/* HEADING */}
-          <Text style={styles.headingApp}>The Orignal Solar Flag Lamps</Text>
+        {/* HEADING */}
+        <Text style={styles.headingApp}>The Orignal Solar Flag Lamps</Text>
         </View>
 
-        {/* ------------------------------------------GREEN WALA DABBA-------------------------------------------------------------------------- */}
+{/* ------------------------------------------GREEN WALA DABBA-------------------------------------------------------------------------- */}
 
         <View style={styles.submit}>
           <Text style={styles.submitText}>Color</Text>
         </View>
 
-        {/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
+{/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
 
         <View style={styles.top}>
-          {/* <View style={styles.left}> */}
           <ColorPicker
             ref={(r) => {
               this.picker = r;
@@ -62,15 +61,25 @@ class App extends Component {
             swatchesLast={this.state.swatchesLast}
             swatches={this.state.swatchesEnabled}
             discrete={this.state.disc}
-          />         
+          />
         </View>
 
+        <View style={styles.middle} >
+       
+          
+        
+          </View>
+        <View style={styles.bottom} />
       </View>
     );
   }
 }
 
+
+
 // --------------------------------------------------------------------------------------------------------?
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -79,9 +88,7 @@ const styles = StyleSheet.create({
   },
 
   top: {
-    flex: 1,
-    flexDirection: "row",
-    padding: 0,
+    padding:0,
     borderWidth: 1,
     // marginTop: 0,
     height: 300,
@@ -117,13 +124,15 @@ const styles = StyleSheet.create({
   },
 
   submit: {
-    position: "relative",
+    position:"relative",
     top: 8,
     // marginTop: 10,
     marginRight: 140,
     marginLeft: 140,
     height: 30,
     backgroundColor: "green",
+
+
   },
   submitText: {
     color: "#fff",
@@ -131,7 +140,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
   },
-
 });
 
 export default App;
