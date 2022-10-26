@@ -10,6 +10,7 @@ import {
 import { Linking } from "react-native";
 import ColorPicker from "react-native-wheel-color-picker";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -63,12 +64,18 @@ class App extends Component {
             discrete={this.state.disc}
           />
         </View>
-
-        <View style={styles.middle} >
-       
+        <View style={styles.submit1}>
+          <Text style={styles.submitText}>Effects</Text>
+        </View>
+        <View style={styles.middle} >    
           
         
-          </View>
+        </View>
+
+
+        <View style={styles.submit2}>
+          <Text style={styles.submitText}>Features</Text>
+        </View>
         <View style={styles.bottom} />
       </View>
     );
@@ -91,7 +98,7 @@ const styles = StyleSheet.create({
     padding:0,
     borderWidth: 1,
     // marginTop: 0,
-    height: 300,
+    height: 250,
     borderColor: "green",
   },
   headingApp: {
@@ -102,16 +109,18 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   middle: {
-    flex: 0.3,
-    backgroundColor: "beige",
-    borderWidth: 5,
+    padding:0,
+    borderWidth: 1,
+    marginTop: 10,
+    height: 150,
+    borderColor: "green",
   },
   bottom: {
-    flex: 0.3,
-    backgroundColor: "pink",
-    borderWidth: 5,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    padding:0,
+    borderWidth: 1,
+    // marginTop: 0,
+    height: 150,
+    borderColor: "green",
   },
 
   logo: {
@@ -134,12 +143,35 @@ const styles = StyleSheet.create({
 
 
   },
+  submit1: {
+    position:"relative",
+    top: 18,
+    // marginTop: 10,
+    marginRight: 140,
+    marginLeft: 140,
+    height: 30,
+    backgroundColor: "green",
+
+
+  },
+  submit2: {
+    position:"relative",
+    top: 9,
+    marginTop: 8,
+    marginRight: 140,
+    marginLeft: 140,
+    height: 30,
+    backgroundColor: "green",
+
+
+  },
   submitText: {
     color: "#fff",
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 20,
   },
+ 
 });
 
 export default App;
