@@ -10,8 +10,9 @@ import {
 import { Linking } from "react-native";
 import ColorPicker from "react-native-wheel-color-picker";
 import { Divider } from '@rneui/themed';
-// import {Checkbox} from 'react-native-community'
+import { CheckBox } from '@react-native-community/checkbox';
 class App extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {};
@@ -47,11 +48,12 @@ class App extends Component {
         {/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
       
         <View style={styles.top}>
+        
         {/* <CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
-          style={styles.checkbox}
-        /> */}
+    disabled={false}
+    value={toggleCheckBox}
+    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+  /> */}
         
           <ColorPicker
             ref={(r) => {
