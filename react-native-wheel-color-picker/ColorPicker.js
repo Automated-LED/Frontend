@@ -24,11 +24,7 @@ const PALETTE = [
 	'#ed1c24',
 	'#d11cd5',
 	'#1633e6',
-	'#00aeef',
-	'#00c85d',
-	'#57ff0a',
-	'#ffde17',
-	'#f26522',
+	
 ]
 
 const RGB_MAX = 255
@@ -145,7 +141,7 @@ const hex2Hsv = (hex) => {
 
 // expands hex to full 6 chars (#fff -> #ffffff) if necessary
 const expandColor = color => typeof color == 'string' && color.length === 4
-	? `#${color[1]}${color[1]}${color[2]}${color[2]}${color[3]}${color[3]}`
+	? `#${color[1]}${color[2]}${color[3]}${color[3]}`
 	: color;
 
 
@@ -167,9 +163,9 @@ module.exports = class ColorPicker extends Component {
 		noSnap: false, // enables snapping on the center of wheel and edges of wheel and slider
 		thumbSize: 50, // wheel color thumb size
 		sliderSize: 20, // slider and slider color thumb size
-		gapSize: 16, // size of gap between slider and wheel
+		gapSize: 10, // size of gap between slider and wheel
 		discrete: false, // use swatchs of shades instead of slider
-		discreteLength: 10, // number of swatchs of shades
+		discreteLength: 5, // number of swatchs of shades
 		sliderHidden: false, // if true the slider is hidden
 		swatches: true, // show color swatches
 		swatchesLast: true, // if false swatches are shown before wheel
@@ -584,7 +580,7 @@ module.exports = class ColorPicker extends Component {
 		}
 		const swatchStyle = {
 			flexDirection:row?'column':'row',
-			width:row?20:'100%',
+			width:row?10:'80%',
 			height:row?'100%':20,
 			marginLeft:row?margin:0,
 			marginTop:row?0:margin,
@@ -593,7 +589,7 @@ module.exports = class ColorPicker extends Component {
 			marginTop:0,
 			marginLeft:0,
 			marginRight:row?margin:0,
-//			marginBottom:row?0:margin,
+			marginBottom:row?0:margin,
 		}
 		// console.log('RENDER >>',row,thumbSize,sliderSize)
 		return (
@@ -615,7 +611,9 @@ module.exports = class ColorPicker extends Component {
 					<Animated.View style={[ss.sliderThumb,sliderThumbStyle,Elevations[4],{pointerEvents:'none'}]} />
 					<View style={[ss.cover]} onLayout={this.onSliderLayout} {...sliderPanHandlers} ref={r => { this.slider = r }}></View>
 				</View>) } */}
-				{ swatches && swatchesLast && <View style={[ss.swatches,swatchStyle]} key={'SW'}>{ this.swatches }</View> }
+				{ swatches && swatchesLast &&
+				 <View style={[ss.swatches,swatchStyle]} key={'SW'}>{ this.swatches }
+				 </View> }
 			</View>
 		)
 	}
@@ -639,8 +637,8 @@ const ss = StyleSheet.create({
 //		flex: 0.1,
 		justifyContent: 'center',
 		marginTop:0,
-
-		alignItems: 'flex-start',
+		
+		// alignItems: 'flex-start',
 		position: 'relative',
 		overflow: 'visible',
 		width: '90%',
@@ -709,7 +707,7 @@ const ss = StyleSheet.create({
 		height: '100%',
 	},
 	swatches: {
-		width: '100%',
+		width: '10%',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 //		marginTop: 16,
@@ -726,7 +724,6 @@ const ss = StyleSheet.create({
 		overflow: 'visible',
 	},
 	swatchTouch: {
-
 		width: 30,
 		height: 30,
 		borderRadius: 15,

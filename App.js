@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Linking } from "react-native";
 import ColorPicker from "react-native-wheel-color-picker";
-
+import { Divider } from '@rneui/themed';
 
 class App extends Component {
   constructor(props) {
@@ -61,9 +61,9 @@ class App extends Component {
             row={false}
             swatchesLast={this.state.swatchesLast}
             swatches={this.state.swatchesEnabled}
-            discrete={this.state.disc}
+            discrete={5}
           />
-
+ <Divider width={2} orientation="vertical" marginTop={20} marginBottom={50} />
           <ColorPicker
             ref={(r) => {
               this.picker = r;
@@ -76,9 +76,10 @@ class App extends Component {
             sliderSize={30}
             noSnap={true}
             row={false}
+            
             swatchesLast={this.state.swatchesLast}
             swatches={this.state.swatchesEnabled}
-            discrete={this.state.disc}
+            discrete={5}
           />
         </View>
         
