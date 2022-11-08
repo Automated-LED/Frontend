@@ -79,13 +79,25 @@ class App extends Component {
         <View style={styles.bottom} >
         <TouchableOpacity
             onPress={() => Linking.openURL("https://flaglamps.com/")}
-            activeOpacity={1}
+            activeOpacity={0.7}
           >
             <Image
               source={{
-                uri: "https://github.com/Automated-LED/Frontend/blob/master/assets/flame.png",
+                uri: "https://raw.githubusercontent.com/Automated-LED/Frontend/master/assets/FlameF.jpg",
               }}
-              style={styles.logo}
+              style={styles.flame}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => Linking.openURL("https://flaglamps.com/")}
+            activeOpacity={0.7}
+          >
+            <Image
+              source={{
+                uri: "https://raw.githubusercontent.com/Automated-LED/Frontend/master/assets/RainbowF.jpg",
+              }}
+              style={styles.rainbow}
             />
           </TouchableOpacity>
         </View>
@@ -140,7 +152,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // marginTop: 0,
     height: 150,
+    flexDirection: 'row',
     borderColor: "green",
+    justifyContent : 'space-between'
   },
 buttonView:{
 marginTop:20,
@@ -152,6 +166,20 @@ marginRight:130,
     height: 50,
     marginTop: 20,
   },
+  flame: {    
+    width: 120,
+    height: 120,
+    marginTop: 9,
+    marginLeft: 35,
+  },
+  
+  rainbow: {    
+    width: 120,
+    height: 120,
+    marginTop: 9,
+    marginRight: 35,
+  },
+
   navbar: {
     backgroundColor: "#feffcb",
   },
