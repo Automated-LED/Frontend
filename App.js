@@ -10,6 +10,7 @@ import {
 import { Linking } from "react-native";
 import ColorPicker from "react-native-wheel-color-picker";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -44,7 +45,7 @@ class App extends Component {
         </View>
 
         {/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
-
+      
         <View style={styles.top}>
           <ColorPicker
             ref={(r) => {
@@ -62,8 +63,25 @@ class App extends Component {
             swatches={this.state.swatchesEnabled}
             discrete={this.state.disc}
           />
-        </View>
 
+          <ColorPicker
+            ref={(r) => {
+              this.picker = r;
+            }}
+            color={this.state.currentColor}
+            swatchesOnly={this.state.swatchesOnly}
+            onColorChange={this.onColorChange}
+            onColorChangeComplete={this.onColorChangeComplete}
+            thumbSize={40}
+            sliderSize={30}
+            noSnap={true}
+            row={false}
+            swatchesLast={this.state.swatchesLast}
+            swatches={this.state.swatchesEnabled}
+            discrete={this.state.disc}
+          />
+        </View>
+        
         {/* -----------------------------------------------Effects------------------------------------------------------------------------ */}
         <View style={styles.submit}>
           <Text style={styles.submitText}>Effects</Text>
@@ -131,10 +149,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-
+//  flex:{
+//   display: "flex",
+//   flexWrap:"wrap",
+//  },
   top: {
     padding: 0,
     borderWidth: 1,
+    flexDirection:'row',
+    // boxSizing:"border-box",
+    // display: "flex",
+    // alignItems:"center",
+    // justifyContent:"center",
     // marginTop: 0,
     
     height: 250,

@@ -639,7 +639,8 @@ const ss = StyleSheet.create({
 //		flex: 0.1,
 		justifyContent: 'center',
 		marginTop:0,
-		alignItems: 'center',
+
+		alignItems: 'flex-start',
 		position: 'relative',
 		overflow: 'visible',
 		width: '90%',
