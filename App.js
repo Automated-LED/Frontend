@@ -136,11 +136,13 @@ const styles = StyleSheet.create({
     padding: 0,
     borderWidth: 1,
     // marginTop: 0,
+    
     height: 250,
     borderColor: "green",
+    marginBottom:10
   },
   headingApp: {
-    fontSize: 26,
+    fontSize: 20,
     fontWeight: "bold",
     color: "green",
     textAlign: "center",
@@ -149,14 +151,14 @@ const styles = StyleSheet.create({
   middle: {
     padding: 0,
     borderWidth: 1,
-    marginTop: 10,
+   
     height: 150,
     borderColor: "green",
   },
   bottom: {
     padding: 0,
     borderWidth: 1,
-    // marginTop: 0,
+    marginTop: 9,
     height: 150,
     flexDirection: "row",
     borderColor: "green",
@@ -191,7 +193,8 @@ const styles = StyleSheet.create({
   },
 
   submit: {
-    // marginTop: 10,
+    marginTop: 4,
+    
     marginRight: 140,
     marginLeft: 140,
     height: 30,
