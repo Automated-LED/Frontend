@@ -83,7 +83,7 @@ class App extends Component {
           >
             <Image
               source={{
-                uri: "https://cdn.shopify.com/s/files/1/0532/3522/0641/files/L_M_Logo_Original_180x.jpg?v=1613004952",
+                uri: "https://github.com/Automated-LED/Frontend/blob/master/assets/flame.png",
               }}
               style={styles.logo}
             />
