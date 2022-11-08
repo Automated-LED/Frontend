@@ -4,12 +4,11 @@ import {
   StyleSheet,
   Text,
   Image,
-  TouchableHighlight,
+  Button,
   TouchableOpacity,
 } from "react-native";
 import { Linking } from "react-native";
 import ColorPicker from "react-native-wheel-color-picker";
-
 
 class App extends Component {
   constructor(props) {
@@ -22,11 +21,11 @@ class App extends Component {
       <View style={styles.container}>
         {/* ------------------------------- NAVBAR----------------------------------------------------------- */}
         <View style={styles.navbar}>
-          
           {/* LOGO IMAGE */}
           <TouchableOpacity
             onPress={() => Linking.openURL("https://flaglamps.com/")}
-            activeOpacity={1} >
+            activeOpacity={1}
+          >
             <Image
               source={{
                 uri: "https://cdn.shopify.com/s/files/1/0532/3522/0641/files/L_M_Logo_Original_180x.jpg?v=1613004952",
@@ -34,17 +33,17 @@ class App extends Component {
               style={styles.logo}
             />
           </TouchableOpacity>
-        {/* HEADING */}
-        <Text style={styles.headingApp}>The Orignal Solar Flag Lamps</Text>
+          {/* HEADING */}
+          <Text style={styles.headingApp}>The Orignal Solar Flag Lamps</Text>
         </View>
 
-{/* ------------------------------------------GREEN WALA DABBA-------------------------------------------------------------------------- */}
+        {/* ------------------------------------------GREEN WALA DABBA-------------------------------------------------------------------------- */}
 
         <View style={styles.submit}>
           <Text style={styles.submitText}>Color</Text>
         </View>
 
-{/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
+        {/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
 
         <View style={styles.top}>
           <ColorPicker
@@ -66,27 +65,36 @@ class App extends Component {
         </View>
         <View style={styles.submit1}>
           <Text style={styles.submitText}>Effects</Text>
+          <Text style={styles.heading}>Steady On</Text>
+          {/* <Text style={styles.heading1}>Flash Strobe Fade</Text> */}
         </View>
-        <View style={styles.middle} >    
-          
-        
-        </View>
-
+        <View style={styles.middle}></View>
 
         <View style={styles.submit2}>
           <Text style={styles.submitText}>Features</Text>
         </View>
-        <View style={styles.bottom} />
+
+        <View style={styles.bottom} >
+        
+        </View>
+        
+        <View style={styles.buttonView}>
+        <Button 
+          onPress={() => {
+            Alert.alert("You tapped the button!");
+          }}
+          style={{fontSize: 50, color: 'green'}}
+          title="UPDATE" 
+          color="green"
+        />
+        </View>
+
       </View>
     );
   }
 }
 
-
-
 // --------------------------------------------------------------------------------------------------------?
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -95,7 +103,7 @@ const styles = StyleSheet.create({
   },
 
   top: {
-    padding:0,
+    padding: 0,
     borderWidth: 1,
     // marginTop: 0,
     height: 250,
@@ -109,20 +117,24 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   middle: {
-    padding:0,
+    padding: 0,
     borderWidth: 1,
     marginTop: 10,
     height: 150,
     borderColor: "green",
   },
   bottom: {
-    padding:0,
+    padding: 0,
     borderWidth: 1,
     // marginTop: 0,
     height: 150,
     borderColor: "green",
   },
-
+buttonView:{
+marginTop:20,
+marginLeft:130,
+marginRight:130,
+},
   logo: {
     width: 90,
     height: 50,
@@ -133,45 +145,56 @@ const styles = StyleSheet.create({
   },
 
   submit: {
-    position:"relative",
+    position: "relative",
     top: 8,
     // marginTop: 10,
     marginRight: 140,
     marginLeft: 140,
     height: 30,
     backgroundColor: "green",
-
-
   },
   submit1: {
-    position:"relative",
+    position: "relative",
     top: 18,
     // marginTop: 10,
     marginRight: 140,
     marginLeft: 140,
     height: 30,
     backgroundColor: "green",
-
-
   },
   submit2: {
-    position:"relative",
+    position: "relative",
     top: 9,
     marginTop: 8,
     marginRight: 140,
     marginLeft: 140,
     height: 30,
     backgroundColor: "green",
-
-
   },
+ 
   submitText: {
     color: "#fff",
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 20,
   },
- 
+
+  heading: {
+    color: "green",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 20,
+    top: 12
+  },
+
+  heading1: {
+    aligncontent: "spacebetween",
+    color: "grey",
+    textAlign: "left",
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+
 });
 
 export default App;

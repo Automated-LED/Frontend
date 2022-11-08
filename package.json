@@ -15,7 +15,10 @@
     "react-native": "0.69.6",
     "react-native-advanced-ripple": "^1.0.0",
     "react-native-elevation": "^1.0.0",
-    "react-native-hyperlink": "^0.0.22"
+    "react-native-hyperlink": "^0.0.22",
+    "react-native-web": "~0.18.7",
+    "react-dom": "18.0.0",
+    "@expo/webpack-config": "^0.17.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
