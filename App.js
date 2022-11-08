@@ -63,22 +63,28 @@ class App extends Component {
             discrete={this.state.disc}
           />
         </View>
-        <View style={styles.submit1}>
+
+        {/* -----------------------------------------------Effects------------------------------------------------------------------------ */}
+        <View style={styles.submit}>
           <Text style={styles.submitText}>Effects</Text>
-          <Text style={styles.heading}>Steady On</Text>
-          {/* <Text style={styles.heading1}>Flash Strobe Fade</Text> */}
         </View>
+        {/* <View style={styles.effects}>
+          </View>
+           */}
+
+        {/* -----------------------------------------------Features------------------------------------------------------------------------ */}
+
         <View style={styles.middle}></View>
 
         <View style={styles.submit2}>
           <Text style={styles.submitText}>Features</Text>
         </View>
 
-       
-
-        <View style={styles.bottom} >
-        <TouchableOpacity
-            onPress={() => Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}
+        <View style={styles.bottom}>
+          <TouchableOpacity
+            onPress={() =>
+              Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            }
             activeOpacity={0.7}
           >
             <Image
@@ -90,7 +96,9 @@ class App extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}
+            onPress={() =>
+              Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            }
             activeOpacity={0.7}
           >
             <Image
@@ -101,18 +109,16 @@ class App extends Component {
             />
           </TouchableOpacity>
         </View>
-        
-        <View style={styles.buttonView}>
-        <Button 
-          onPress={() => {
-            Alert.alert("You tapped the button!");
-          }}
-          
-          title="UPDATE" 
-          color="green"
-        />
-        </View>
 
+        <View style={styles.buttonView}>
+          <Button
+            onPress={() => {
+              Alert.alert("You tapped the button!");
+            }}
+            title="UPDATE"
+            color="green"
+          />
+        </View>
       </View>
     );
   }
@@ -152,28 +158,28 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // marginTop: 0,
     height: 150,
-    flexDirection: 'row',
+    flexDirection: "row",
     borderColor: "green",
-    justifyContent : 'space-between'
+    justifyContent: "space-between",
   },
-buttonView:{
-marginTop:20,
-marginLeft:130,
-marginRight:130,
-},
+  buttonView: {
+    marginTop: 20,
+    marginLeft: 130,
+    marginRight: 130,
+  },
   logo: {
     width: 90,
     height: 50,
     marginTop: 20,
   },
-  flame: {    
+  flame: {
     width: 120,
     height: 120,
     marginTop: 9,
     marginLeft: 35,
   },
-  
-  rainbow: {    
+
+  rainbow: {
     width: 120,
     height: 120,
     marginTop: 9,
@@ -185,16 +191,14 @@ marginRight:130,
   },
 
   submit: {
-    position: "relative",
-    top: 8,
     // marginTop: 10,
     marginRight: 140,
     marginLeft: 140,
     height: 30,
     backgroundColor: "green",
   },
+
   submit1: {
-    position: "relative",
     top: 18,
     // marginTop: 10,
     marginRight: 140,
@@ -211,7 +215,7 @@ marginRight:130,
     height: 30,
     backgroundColor: "green",
   },
- 
+
   submitText: {
     color: "#fff",
     textAlign: "center",
@@ -224,7 +228,7 @@ marginRight:130,
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 20,
-    top: 12
+    top: 12,
   },
 
   heading1: {
@@ -234,7 +238,6 @@ marginRight:130,
     fontWeight: "bold",
     fontSize: 20,
   },
-
 });
 
 export default App;
