@@ -74,8 +74,20 @@ class App extends Component {
           <Text style={styles.submitText}>Features</Text>
         </View>
 
+       
+
         <View style={styles.bottom} >
-        
+        <TouchableOpacity
+            onPress={() => Linking.openURL("https://flaglamps.com/")}
+            activeOpacity={1}
+          >
+            <Image
+              source={{
+                uri: "https://cdn.shopify.com/s/files/1/0532/3522/0641/files/L_M_Logo_Original_180x.jpg?v=1613004952",
+              }}
+              style={styles.logo}
+            />
+          </TouchableOpacity>
         </View>
         
         <View style={styles.buttonView}>
@@ -83,7 +95,7 @@ class App extends Component {
           onPress={() => {
             Alert.alert("You tapped the button!");
           }}
-          style={{fontSize: 50, color: 'green'}}
+          
           title="UPDATE" 
           color="green"
         />
