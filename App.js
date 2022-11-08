@@ -78,7 +78,7 @@ class App extends Component {
 
         <View style={styles.bottom} >
         <TouchableOpacity
-            onPress={() => Linking.openURL("https://flaglamps.com/")}
+            onPress={() => Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}
             activeOpacity={0.7}
           >
             <Image
@@ -90,7 +90,7 @@ class App extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => Linking.openURL("https://flaglamps.com/")}
+            onPress={() => Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")}
             activeOpacity={0.7}
           >
             <Image
