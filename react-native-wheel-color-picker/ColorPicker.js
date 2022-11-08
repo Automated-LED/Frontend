@@ -582,13 +582,13 @@ module.exports = class ColorPicker extends Component {
 			flexDirection:row?'column':'row',
 			width:row?10:'80%',
 			height:row?'100%':20,
-			marginLeft:row?margin:0,
+			marginLeft:-18,
 			marginTop:row?0:margin,
 		}
 		const swatchFirstStyle = {
 			marginTop:0,
 			marginLeft:0,
-			marginRight:row?margin:0,
+			// marginRight:row?margin:0,
 			marginBottom:row?0:margin,
 		}
 		// console.log('RENDER >>',row,thumbSize,sliderSize)

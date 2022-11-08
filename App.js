@@ -10,7 +10,7 @@ import {
 import { Linking } from "react-native";
 import ColorPicker from "react-native-wheel-color-picker";
 import { Divider } from '@rneui/themed';
-
+// import {Checkbox} from 'react-native-community'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -47,6 +47,12 @@ class App extends Component {
         {/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
       
         <View style={styles.top}>
+        {/* <CheckBox
+          value={isSelected}
+          onValueChange={setSelection}
+          style={styles.checkbox}
+        /> */}
+        
           <ColorPicker
             ref={(r) => {
               this.picker = r;
@@ -86,10 +92,12 @@ class App extends Component {
         {/* -----------------------------------------------Effects------------------------------------------------------------------------ */}
         <View style={styles.submit}>
           <Text style={styles.submitText}>Effects</Text>
-            <View>
-
-
-            </View>
+          
+          <View style={styles.submit3}>
+            <Text style={styles.submitText1}>Flash</Text>
+            <Text style={styles.submitText1}>Strobe</Text>
+            <Text style={styles.submitText1}>Fade</Text>
+          </View>
         </View>
         {/* <View style={styles.effects}>
           </View>
@@ -198,6 +206,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderColor: "green",
     justifyContent: "space-between",
+  },
+  submit3: {
+    marginTop: 9,
+    height: 150,
+    marginLeft:-160,
+    marginTop:60,
+    flexDirection: "row",
+    borderColor: "green",
+    // justifyContent: "space-between"
+  },
+  submitText1: {
+    color: "grey",
+    fontWeight: "bold",
+    fontSize: 15,
+    flexDirection: "row",
+    paddingLeft:75,
+    justifyContent: "space-between"
   },
   buttonView: {
     marginTop: 20,
