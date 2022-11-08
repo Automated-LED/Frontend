@@ -85,6 +85,10 @@ class App extends Component {
         {/* -----------------------------------------------Effects------------------------------------------------------------------------ */}
         <View style={styles.submit}>
           <Text style={styles.submitText}>Effects</Text>
+            <View>
+
+
+            </View>
         </View>
         {/* <View style={styles.effects}>
           </View>
@@ -162,7 +166,8 @@ const styles = StyleSheet.create({
     // alignItems:"center",
     // justifyContent:"center",
     // marginTop: 0,
-    
+    marginLeft: 10,
+    marginRight: 10,
     height: 250,
     borderColor: "green",
     marginBottom:10
@@ -177,7 +182,8 @@ const styles = StyleSheet.create({
   middle: {
     padding: 0,
     borderWidth: 1,
-   
+    marginLeft: 10,
+    marginRight: 10,
     height: 150,
     borderColor: "green",
   },
@@ -186,6 +192,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 9,
     height: 150,
+    marginLeft: 10,
+    marginRight: 10,
     flexDirection: "row",
     borderColor: "green",
     justifyContent: "space-between",
@@ -220,7 +228,7 @@ const styles = StyleSheet.create({
 
   submit: {
     marginTop: 4,
-    
+    width: "auto",
     marginRight: 140,
     marginLeft: 140,
     height: 30,
