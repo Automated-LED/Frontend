@@ -21,7 +21,8 @@
     "react-native-advanced-ripple": "^1.0.0",
     "react-native-elevation": "^1.0.0",
     "react-native-hyperlink": "^0.0.22",
-    "react-native-web": "^0.18.10"
+    "react-native-web": "^0.18.10",
+    "expo-updates": "~0.14.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
