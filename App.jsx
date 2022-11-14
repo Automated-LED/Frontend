@@ -9,10 +9,8 @@ import {
 } from "react-native";
 import { Linking } from "react-native";
 import ColorPicker from "react-native-wheel-color-picker";
-import { Divider } from '@rneui/themed';
-import { CheckBox } from '@react-native-community/checkbox';
+import { Divider } from "@rneui/themed";
 class App extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {};
@@ -36,25 +34,18 @@ class App extends Component {
             />
           </TouchableOpacity>
           {/* HEADING */}
-          <Text style={styles.headingApp}>The Orignal Solar Flag Lamps</Text>
+          <Text style={styles.headingApp}>The Original Solar Flag Lamps</Text>
         </View>
 
-        {/* ------------------------------------------GREEN WALA DABBA-------------------------------------------------------------------------- */}
+        {/* ------------------------------------------GREEN BOX-------------------------------------------------------------------------- */}
 
-        <View style={styles.submit}>
-          <Text style={styles.submitText}>Color</Text>
+        <View style={styles.box}>
+          <Text style={styles.text}>Color</Text>
         </View>
 
         {/* -----------------------------------------------COLOR WHEEL------------------------------------------------------------------------ */}
-      
+
         <View style={styles.top}>
-        
-        {/* <CheckBox
-    disabled={false}
-    value={toggleCheckBox}
-    onValueChange={(newValue) => setToggleCheckBox(newValue)}
-  /> */}
-        
           <ColorPicker
             ref={(r) => {
               this.picker = r;
@@ -71,7 +62,12 @@ class App extends Component {
             swatches={this.state.swatchesEnabled}
             discrete={5}
           />
- <Divider width={2} orientation="vertical" marginTop={20} marginBottom={50} />
+          <Divider
+            width={2}
+            orientation="vertical"
+            marginTop={10}
+            marginBottom={10}
+          />
           <ColorPicker
             ref={(r) => {
               this.picker = r;
@@ -84,33 +80,16 @@ class App extends Component {
             sliderSize={30}
             noSnap={true}
             row={false}
-            
             swatchesLast={this.state.swatchesLast}
             swatches={this.state.swatchesEnabled}
             discrete={5}
           />
         </View>
-        
-        {/* -----------------------------------------------Effects------------------------------------------------------------------------ */}
-        <View style={styles.submit}>
-          <Text style={styles.submitText}>Effects</Text>
-          
-          <View style={styles.submit3}>
-            <Text style={styles.submitText1}>Flash</Text>
-            <Text style={styles.submitText1}>Strobe</Text>
-            <Text style={styles.submitText1}>Fade</Text>
-          </View>
-        </View>
-        {/* <View style={styles.effects}>
-          </View>
-           */}
 
         {/* -----------------------------------------------Features------------------------------------------------------------------------ */}
 
-        <View style={styles.middle}></View>
-
-        <View style={styles.submit2}>
-          <Text style={styles.submitText}>Features</Text>
+        <View style={styles.box}>
+          <Text style={styles.text}>Features</Text>
         </View>
 
         <View style={styles.bottom}>
@@ -124,7 +103,7 @@ class App extends Component {
               source={{
                 uri: "https://raw.githubusercontent.com/Automated-LED/Frontend/master/assets/FlameF.jpg",
               }}
-              style={styles.flame}
+              style={styles.img}
             />
           </TouchableOpacity>
 
@@ -138,7 +117,7 @@ class App extends Component {
               source={{
                 uri: "https://raw.githubusercontent.com/Automated-LED/Frontend/master/assets/RainbowF.jpg",
               }}
-              style={styles.rainbow}
+              style={styles.img}
             />
           </TouchableOpacity>
         </View>
@@ -161,27 +140,23 @@ class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
-  },
-//  flex:{
-//   display: "flex",
-//   flexWrap:"wrap",
-//  },
-  top: {
+    alignItems: "center",
+    justifyContent: "center",
+    margin: 0,
     padding: 0,
-    borderWidth: 1,
-    flexDirection:'row',
-    // boxSizing:"border-box",
-    // display: "flex",
-    // alignItems:"center",
-    // justifyContent:"center",
-    // marginTop: 0,
-    marginLeft: 10,
-    marginRight: 10,
-    height: 250,
-    borderColor: "green",
-    marginBottom:10
+    width: "100%",
+  },
+
+  //----------------  NAVBAR STYLING ---------
+  navbar: {
+    width: "100%",
+    backgroundColor: "#feffcb",
+  },
+  logo: {
+    width: 90,
+    height: 50,
+    marginTop: 20,
   },
   headingApp: {
     fontSize: 20,
@@ -190,118 +165,71 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 15,
   },
-  middle: {
-    padding: 0,
+
+  //----------------  GREEN BOX STYLING ---------
+
+  box: {
+    width: "auto",
+    paddingLeft: 15,
+    paddingRight: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "green",
+    marginTop: 20,
+    marginBottom: 10,
+  },
+  text: {
+    color: "#fff",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 18,
+    margin: 5,
+  },
+
+  //----------------  COLOR WHEEL STYLING ---------
+
+  top: {
     borderWidth: 1,
+    flexDirection: "row",
     marginLeft: 10,
     marginRight: 10,
-    height: 150,
+    height: "auto",
+    width: "95%",
+    paddingTop: 10,
+    paddingBottom: 10,
     borderColor: "green",
+  },
+
+  //----------------  FEATURES STYLING ---------
+
+  box2: {
+    height: 40,
+    width: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "green",
+    marginTop: 20,
   },
   bottom: {
-    padding: 0,
     borderWidth: 1,
-    marginTop: 9,
-    height: 150,
-    marginLeft: 10,
-    marginRight: 10,
     flexDirection: "row",
+    height: "auto",
+    width: "95%",
+    paddingTop: 10,
+    paddingBottom: 10,
     borderColor: "green",
     justifyContent: "space-between",
-  },
-  submit3: {
-    marginTop: 9,
-    height: 150,
-    marginLeft:-160,
-    marginTop:60,
-    flexDirection: "row",
-    borderColor: "green",
-    // justifyContent: "space-between"
-  },
-  submitText1: {
-    color: "grey",
-    fontWeight: "bold",
-    fontSize: 15,
-    flexDirection: "row",
-    paddingLeft:75,
-    justifyContent: "space-between"
   },
   buttonView: {
     marginTop: 20,
     marginLeft: 130,
     marginRight: 130,
   },
-  logo: {
-    width: 90,
-    height: 50,
-    marginTop: 20,
-  },
-  flame: {
+  img: {
+    marginLeft: "10%",
+    marginRight: "10%",
     width: 120,
     height: 120,
-    marginTop: 9,
-    marginLeft: 35,
-  },
-
-  rainbow: {
-    width: 120,
-    height: 120,
-    marginTop: 9,
-    marginRight: 35,
-  },
-
-  navbar: {
-    backgroundColor: "#feffcb",
-  },
-
-  submit: {
-    marginTop: 4,
-    width: "auto",
-    marginRight: 140,
-    marginLeft: 140,
-    height: 30,
-    backgroundColor: "green",
-  },
-
-  submit1: {
-    top: 18,
-    // marginTop: 10,
-    marginRight: 140,
-    marginLeft: 140,
-    height: 30,
-    backgroundColor: "green",
-  },
-  submit2: {
-    position: "relative",
-    top: 9,
-    marginTop: 8,
-    marginRight: 140,
-    marginLeft: 140,
-    height: 30,
-    backgroundColor: "green",
-  },
-
-  submitText: {
-    color: "#fff",
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 20,
-  },
-
-  heading: {
-    color: "green",
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 20,
-    top: 12,
-  },
-
-  heading1: {
-    aligncontent: "spacebetween",
-    color: "grey",
-    textAlign: "left",
-    fontWeight: "bold",
-    fontSize: 20,
   },
 });
 
